@@ -11,13 +11,13 @@ if (isset($_POST['login_btn'])) {
 
     if ($uname && $pass) {
 
-        $result = mysqli_query($conn, "SELECT * FROM data  WHERE uname='$uname' AND password='$pass'");
+        $result = mysqli_query($conn, "SELECT * FROM data LEFT JOIN usertype_table on data.usertype   WHERE username='$uname' AND password='$pass'");
 
 
         if ($row = mysqli_fetch_array($result)) {
 
             $_SESSION['uname'] = $row['uname'];
-            $_SESSION['usertype'] = $row['access'];
+            // $_SESSION['usertype'] = $row['access'];
 
             if ($row['access'] == "admin") {
                 header('location: admin_page.php');
