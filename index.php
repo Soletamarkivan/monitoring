@@ -1,9 +1,17 @@
 ﻿<?php
 include "db_connection.php";
 include "code_login.php";
+
+if (isset($_SESSION['usertype'])) {
+
+	if ($_SESSION['usertype'] == 'admin') {
+		header('location: admin_page.php');
+	} else if ($_SESSION['usertype'] == 'supervisor') {
+		header('location: supervisor_page.php');
+	}
+}
 ?>
-<!DOCTYPE html>
-<html lang="en" class="h-100">
+
 
 <head>
 	<meta charset="utf-8">
@@ -32,7 +40,7 @@ include "code_login.php";
 		}
 
 		.bg_container>img {
-			filter: blur(5px);
+
 			height: 100%;
 			width: 100%;
 		}
@@ -41,7 +49,7 @@ include "code_login.php";
 			box-shadow: 10px 10px 30px black;
 			border-radius: 20px;
 			background-color: #171205;
-			opacity: 0.7;
+			opacity: 3;
 
 		}
 	</style>
@@ -64,7 +72,11 @@ include "code_login.php";
 									<div class="text-center mb-3">
 										<!-- <img src="images/logo-full.png" alt=""> -->
 									</div>
+
 									<h4 class="text-center text-light mb-4">Sign in your account</h4>
+
+									<!-- NOTIF FOR Credentials -->
+									<?php echo $notif ?>
 									<form method="POST">
 										<div class="form-group">
 											<label class="mb-1"><strong>Username</strong></label>

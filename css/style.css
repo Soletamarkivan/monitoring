@@ -46549,7 +46549,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   background-color: #fff;
 }
 
-[data-theme-version="dark"][data-layout="horizontal"] .search-area .input-group-append .input-group-text,
+about:blank#blocked [data-theme-version="dark"][data-layout="horizontal"] .search-area .input-group-append .input-group-text,
 [data-theme-version="dark"][data-layout="horizontal"] .search-area .form-control {
   background: #2C254A !important;
 }

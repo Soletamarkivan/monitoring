@@ -5,38 +5,40 @@
     <div class="deznav-scroll">
         <div class="main-profile">
             <div class="image-bx">
-                <img src="images/Untitled-1.jpg" alt="">
-                <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                <img src="images/logos/user.png" alt="">
+                <!-- <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a> -->
             </div>
-            <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
-            <p class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e4e8fbf8fcecf3f3f3f3c9e4e8e0e5a7eae6e4">[email&#160;protected]</a></p>
+            <h5 class="name"><span class="font-w400">Hello</span>, Admin</h5>
+            <!-- <p class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e4e8fbf8fcecf3f3f3f3c9e4e8e0e5a7eae6e4">[email&#160;protected]</a></p> -->
         </div>
         <ul class="metismenu" id="menu">
-            <li class="nav-label first">Main Menu</li>
+            <li class="nav-label first">MAIN MENU</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
-                    <span class="nav-text">Dashboard</span>
+                    <span class="nav-text">DASHBOARD</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="index.html">Dashboard Light</a></li>
-                    <li><a href="index-2.html">Dashboard Dark</a></li>
-                    <li><a href="my-wallets.html">Wallet</a></li>
-                    <li><a href="tranasactions.html">Transactions</a></li>
-                    <li><a href="coin-details.html">Coin Details</a></li>
-                    <li><a href="portofolio.html">Portofolio</a></li>
-                    <li><a href="market-capital.html">Market Capital</a></li>
+                    <li><a href="app-profile.html">FMC</a></li>
+                    <li><a href="post-details.html">MBI</a></li>
+                    <li><a href="post-details.html">MSC</a></li>
+                    <li><a href="post-details.html">EF</a></li>
+
                 </ul>
 
             </li>
-            <li class="nav-label">Apps</li>
+            <li class="nav-label">Action</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-077-menu-1"></i>
-                    <span class="nav-text">Apps</span>
+                    <span class="nav-text">INVENTORY</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="app-profile.html">Profile</a></li>
-                    <li><a href="post-details.html">Post Details</a></li>
-                    <li><a href="page-chat.html">Chat<span class="badge badge-xs badge-danger">New</span></a></li>
+                    <li><a href="fmc_table.php">FMC</a></li>
+                    <li><a href="post-details.html">MBI</a></li>
+                    <li><a href="post-details.html">MSC</a></li>
+                    <li><a href="post-details.html">EF</a></li>
+
+
+                    <!-- <li><a href="page-chat.php">Chat<span class="badge badge-xs badge-danger">New</span></a></li>
                     <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Project<span class="badge badge-xs badge-danger">New</span></a>
                         <ul aria-expanded="false">
                             <li><a href="project-list.html">Project List</a></li>
@@ -73,24 +75,23 @@
                             <li><a href="ecom-invoice.html">Invoice</a></li>
                             <li><a href="ecom-customers.html">Customers</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-061-puzzle"></i>
-                    <span class="nav-text">Charts</span>
+
+                    <span class="nav-text">MONITORING</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="chart-flot.html">Flot</a></li>
-                    <li><a href="chart-morris.html">Morris</a></li>
-                    <li><a href="chart-chartjs.html">Chartjs</a></li>
-                    <li><a href="chart-chartist.html">Chartist</a></li>
-                    <li><a href="chart-sparkline.html">Sparkline</a></li>
-                    <li><a href="chart-peity.html">Peity</a></li>
+                    <li><a href="app-profile.html">FMC</a></li>
+                    <li><a href="post-details.html">MBI</a></li>
+                    <li><a href="post-details.html">MSC</a></li>
+                    <li><a href="post-details.html">EF</a></li>
                 </ul>
             </li>
-            <li class="nav-label">components</li>
+            <!-- <li class="nav-label">components</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-003-diamond"></i>
                     <span class="nav-text">Bootstrap</span>
@@ -174,12 +175,10 @@
                     </li>
                     <li><a href="page-lock-screen.html">Lock Screen</a></li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
-        <div class="copyright">
-            <p><strong>Zenix Crypto Admin Dashboard</strong> © 2021 All Rights Reserved</p>
-            <p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
-        </div>
+
+
     </div>
 </div>
 <!--**********************************

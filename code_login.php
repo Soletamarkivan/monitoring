@@ -6,23 +6,23 @@ $notif = '';
 if (isset($_POST['login_btn'])) {
 
 
-    $uname = $_POST['txt_username'];
+    $username = $_POST['txt_username'];
     $pass = $_POST['txt_password'];
 
-    if ($uname && $pass) {
+    if ($username && $pass) {
 
-        $result = mysqli_query($conn, "SELECT * FROM data LEFT JOIN usertype_table on data.usertype   WHERE username='$uname' AND password='$pass'");
+        $result = mysqli_query($db_connect, "SELECT * FROM data LEFT JOIN usertype_table on data.usertype   WHERE username='$username' AND password='$pass'");
 
 
         if ($row = mysqli_fetch_array($result)) {
 
-            $_SESSION['uname'] = $row['uname'];
+            $_SESSION['usertype'] = $row['usertype'];
             // $_SESSION['usertype'] = $row['access'];
 
-            if ($row['access'] == "admin") {
+            if ($row['usertype'] == "admin") {
                 header('location: admin_page.php');
-            } else if ($row['access'] == "user") {
-                header('location: user_page.php');
+            } else if ($row['usertype'] == "supervisor") {
+                header('location: supervisor_page.php');
             }
         } else {
 
@@ -33,5 +33,4 @@ if (isset($_POST['login_btn'])) {
 
         $notif = '<p class="text-danger text-center">Required All Fields</p>';
     }
-
 }
