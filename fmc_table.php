@@ -83,46 +83,20 @@ if ($_SESSION['usertype'] == 'admin') {
 									<table id="example3" class="display" style="min-width: 845px">
 										<thead>
 											<tr>
-												<th>ID</th>
-												<th>Name</th>
-												<th>Department</th>
-												<th>Gender</th>
-												<th>Education</th>
+												<th>NO.</th>
+												<th>USERNAME</th>
+												<th>PASSWORD</th>
+												<th>USERTYPE</th>
+												<!-- <th>Education</th>
 												<th>Mobile</th>
 												<th>Email</th>
 												<th>Joining Date</th>
-												<th>Action</th>
+												<th>Action</th> -->
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-												<td>Tiger Nixon</td>
-												<td>Architect</td>
-												<td>Male</td>
-												<td>M.COM., P.H.D.</td>
-												<td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="98f1f6fef7d8fde0f9f5e8f4fdb6fbf7f5">[email&#160;protected]</span></strong></a>
-												</td>
 
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic3.jpg" alt=""></td>
-												<td>Caesar Vance</td>
-												<td>Pre-Sales Support</td>
-												<td>Male</td>
-												<td>B.TACH, M.TACH</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="b2dbdcd4ddf2d7cad3dfc2ded79cd1dddf">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2011/12/12</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
+											<!-- <tr>
 												<td><img class="rounded-circle" width="35" src="images/profile/small/pic4.jpg" alt=""></td>
 												<td>Doris Wilder</td>
 												<td>Sales Assistant</td>
@@ -240,7 +214,7 @@ if ($_SESSION['usertype'] == 'admin') {
 														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 													</div>
 												</td>
-											</tr>
+											</tr> -->
 										</tbody>
 									</table>
 								</div>

@@ -18,10 +18,11 @@
                     <span class="nav-text">DASHBOARD</span>
                 </a>
                 <ul aria-expanded="false">
+                    <li><a href="fmc_dashboard.php">FMC</a></li>
                     <li><a href="app-profile.html">FMC</a></li>
-                    <li><a href="post-details.html">MBI</a></li>
-                    <li><a href="post-details.html">MSC</a></li>
-                    <li><a href="post-details.html">EF</a></li>
+                    <li><a href="mbi_dashboard.php">MBI</a></li>
+                    <li><a href="msc_dashboard.php">MSC</a></li>
+                    <li><a href="ef_dashboard.php">EF</a></li>
 
                 </ul>
 
@@ -32,10 +33,10 @@
                     <span class="nav-text">INVENTORY</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="fmc_table.php">FMC</a></li>
-                    <li><a href="post-details.html">MBI</a></li>
-                    <li><a href="post-details.html">MSC</a></li>
-                    <li><a href="post-details.html">EF</a></li>
+                    <li><a href="fmc_table.php">FMC TABLE</a></li>
+                    <li><a href="post-details.html">MBI TABLE</a></li>
+                    <li><a href="post-details.html">MSC TABLE</a></li>
+                    <li><a href="post-details.html">EF TABLE</a></li>
 
 
                     <!-- <li><a href="page-chat.php">Chat<span class="badge badge-xs badge-danger">New</span></a></li>

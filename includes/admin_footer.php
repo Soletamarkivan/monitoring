@@ -25,7 +25,6 @@
 
 <!-- Datatable  -->
 <script src="js/dashboard/dashboard-1.js"></script>
-
 <script src="vendor/owl-carousel/owl.carousel.js"></script>
 <script src="js/custom.min.js"></script>
 <script src="js/deznav-init.js"></script>
