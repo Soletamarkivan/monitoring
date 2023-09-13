@@ -77,7 +77,44 @@ if ($_SESSION['usertype'] == 'admin') {
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title">Profile Datatable</h4>
+								<!-- ADD BUTTON  -->
+								<button type="button" class="btn btn-primary mb-2  text-right" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus" aria-hidden="true"></i></button>
 							</div>
+
+							<!-- START ADD MODAL HERE -->
+							<!-- Button trigger modal -->
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModalCenter">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Modal title</h5>
+											<button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+											</button>
+										</div>
+										<form id="addprofile">
+											<div class="modal-body text-left">
+
+												<input type="text" placeholder="USERNAME" class="username text-center" name="username" id="username">
+												<hr>
+
+												<input type="text" placeholder="PASSWORD" class="password text-center" name="password" id="password">
+												<hr>
+
+												<input type="text" placeholder="USERTYPE" class="password text-center" name="usertype" id="usertype">
+
+
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-danger light" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-primary addprofile ">Add Profile</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<!-- END ADD MODAL HERE -->
 							<div class="card-body">
 								<div class="table-responsive">
 									<table id="example3" class="display" style="min-width: 845px">
@@ -96,127 +133,12 @@ if ($_SESSION['usertype'] == 'admin') {
 										</thead>
 										<tbody>
 
-											<!-- <tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic4.jpg" alt=""></td>
-												<td>Doris Wilder</td>
-												<td>Sales Assistant</td>
-												<td>Female</td>
-												<td>B.A, B.C.A</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="c7aea9a1a887a2bfa6aab7aba2e9a4a8aa">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2010/09/20</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic5.jpg" alt=""></td>
-												<td>Angelica Ramos</td>
-												<td>Executive Officer</td>
-												<td>Male</td>
-												<td>B.COM., M.COM.</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="d7beb9b1b897b2afb6baa7bbb2f9b4b8ba">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2009/10/09</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic6.jpg" alt=""></td>
-												<td>Gavin Joyce</td>
-												<td>Developer</td>
-												<td>Female</td>
-												<td>B.TACH, M.TACH</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="3a53545c557a5f425b574a565f14595557">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2010/12/22</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic7.jpg" alt=""></td>
-												<td>Jennifer Chang</td>
-												<td>Regional Director</td>
-												<td>Male</td>
-												<td>B.A, B.C.A</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="5d34333b321d38253c302d3138733e3230">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2010/11/14</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic8.jpg" alt=""></td>
-												<td>Brenden Wagner</td>
-												<td>Software Engineer</td>
-												<td>Female</td>
-												<td>B.TACH, M.TACH</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="87eee9e1e8c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2011/06/07</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic9.jpg" alt=""></td>
-												<td>Fiona Green</td>
-												<td>Operating Officer</td>
-												<td>Male</td>
-												<td>B.A, B.C.A</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="422b2c242d02273a232f322e276c212d2f">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2010/03/11</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><img class="rounded-circle" width="35" src="images/profile/small/pic10.jpg" alt=""></td>
-												<td>Shou Itou</td>
-												<td>Regional Marketing</td>
-												<td>Female</td>
-												<td>B.COM., M.COM.</td>
-												<td><a href="javascript:void(0);"><strong>987 654 3210</strong></a></td>
-												<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="751c1b131a35100d14180519105b161a18">[email&#160;protected]</span></strong></a>
-												</td>
-												<td>2011/08/14</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr> -->
+
 										</tbody>
 									</table>
+
+
+
 								</div>
 							</div>
 
@@ -262,7 +184,7 @@ if ($_SESSION['usertype'] == 'admin') {
         Scripts
     ***********************************-->
 	<!-- Required vendors -->
-	<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<!-- <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
 	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<!-- Datatable -->
@@ -272,6 +194,61 @@ if ($_SESSION['usertype'] == 'admin') {
 	<script src="js/deznav-init.js"></script>
 	<script src="js/demo.js"></script>
 	<!-- <script src="js/styleSwitcher.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#addprofile').on('submit', function() {
+
+				// alert("Hola");
+				var username = $('#username').val();
+				var password = $('#password').val();
+				var usertype = $('#usertype').val();
+
+				// console.log(username);
+
+				if (username && password && usertype) {
+					$.ajax({
+						method: 'POST',
+						url: 'code.php',
+						data: {
+
+							username: username,
+							password: password,
+							usertype: usertype
+
+						},
+						success: function(data) {
+							console.log(data)
+							$('#examplemodal').modal('hide');
+
+						}
+					});
+
+					Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: 'Your work has been saved',
+						showConfirmButton: false,
+						timer: 3500
+					})
+					$('#form_add_profile').modal('hide');
+
+
+				} else {
+					Swal.fire({
+						icon: 'error',
+						title: 'Note',
+						text: 'All fields are required',
+						// footer: '<a href="">Why do I have this issue?</a>'
+					})
+				}
+
+
+			})
+
+		});
+	</script>
 
 </body>
 
