@@ -60,17 +60,31 @@
 			"dataSrc": ""
 		},
 		"columns": [{
-			"data": "no",
+
+			"data": "no"
 		},
 		{
-			"data": "username",
+			"data": "username"
 		},
 		{
-			"data": "password",
+			"data": "password"
 		},
 		{
-			"data": "usertype",
+			"data": "usertype"
 		},
+		{
+			"data": "employee_id"
+		},
+		{
+			"data": "company"
+		},
+		{
+			"data": "department"
+		},
+		{
+			"data": "position"
+		},
+
 		],
 		language: {
 			paginate: {

@@ -3,7 +3,7 @@ include "db_connection.php";
 
 $json = array();
 
-$sql = "SELECT * FROM data WHERE id=id ";
+$sql = "SELECT  * FROM data LEFT JOIN users on users.user_id = data.id;";
 
 $list = $db_connect->query($sql);
 
@@ -17,11 +17,19 @@ while ($data = $list->fetch_assoc()) {
 
 
     $json[] = array(
-        "no"       => $no,
-        "username" => $data['username'],
-        "password" => $data['password'],
-        "usertype" => $data['usertype']
+        "no"          => $no,
+        "username"    => $data['username'],
+        "password"    => $data['password'],
+        "usertype"    => $data['usertype'],
+        "employee_id" => $data['employee_id'],
+        "company"     => $data['company'],
+        "department"  => $data['department'],
+        "position"    => $data['position'],
+
+
+
 
     );
+    // var_dump($data);
 }
 echo json_encode($json);

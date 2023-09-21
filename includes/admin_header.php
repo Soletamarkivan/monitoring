@@ -72,7 +72,6 @@
 
 
 
-
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                             <img src="images/logos/user.png" width="20" alt="">
