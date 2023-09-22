@@ -258,7 +258,7 @@ if ($_SESSION['usertype'] == 'admin') {
 													<th>NO.</th>
 													<th>USERNAME</th>
 													<th>PASSWORD</th>
-													<th>USERTYPE</th>
+													<th>ACCESS</th>
 													<th>EMPLOYEE ID</th>
 													<th>COMPANY</th>
 													<th>DEPARTMENT</th>

@@ -55,6 +55,7 @@
 	// 
 	var table = $('#example3').DataTable({
 
+
 		"ajax": {
 			"url": "table_json.php",
 			"dataSrc": ""
@@ -70,16 +71,16 @@
 			"data": "password"
 		},
 		{
-			"data": "usertype"
+			"data": "access_name"
 		},
 		{
 			"data": "employee_id"
 		},
 		{
-			"data": "company"
+			"data": "company_name"
 		},
 		{
-			"data": "department"
+			"data": "department_name"
 		},
 		{
 			"data": "position"

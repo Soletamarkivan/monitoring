@@ -1,4 +1,5 @@
 <?php
+include "db_connection.php";
 session_start();
 
 
@@ -137,23 +138,77 @@ if ($_SESSION['usertype'] == 'admin') {
 
                                             <div class="form-group col-md-6">
                                                 <label>Company</label>
-                                                <input type="text" class="form-control" placeholder="Company" name="company" id="company">
+                                                <select name="company" class="form-control" id="company">
+                                                    <option value="" id="txtcomp_view">Choose Company</option>
+                                                    <?php
+
+
+                                                    $result = mysqli_query($db_connect, "SELECT * FROM company");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                    ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["company_name"]; ?></option>
+                                                    <?php
+                                                    }
+
+                                                    ?>
+                                                </select>
                                             </div>
 
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-3">
+                                                <label>Department</label>
+
+
+                                                <select name="txtdept" class="form-control" id="department">
+                                                    <option value="">Choose Department</option>
+
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label>Position</label>
+
+
+                                                <select name="txtposition" class="form-control" id="position">
+                                                    <option value="">Choose Position</option>
+
+                                                </select>
+                                            </div>
+                                            <!-- 
+                                            <div class="form-group col-md-3">
                                                 <label>Department</label>
                                                 <input type="text" class="form-control" placeholder="Department" name="department" id="department">
-                                            </div>
+                                            </div> -->
 
-                                            <div class="form-group col-md-6">
+                                            <!-- <div class="form-group col-md-3">
                                                 <label>Position</label>
                                                 <input type="text" class="form-control" placeholder="Position" name="position" id="position">
-                                            </div>
+                                            </div> -->
 
                                             <div class="form-group col-md-6">
                                                 <label>Usertype</label>
-                                                <input type="text" class="form-control" placeholder="Usertype" name="usertype" id="usertype">
+
+
+                                                <select name="access" class="form-control" id="access">
+                                                    <option value="">Choose Access</option>
+                                                    <?php
+                                                    $result = mysqli_query($db_connect, "SELECT * FROM access");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                    ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["access_name"]; ?></option>
+                                                    <?php
+                                                    }
+
+                                                    ?>
+
+                                                </select>
                                             </div>
+
+                                            <!-- <div class="form-group col-md-6">
+                                                <label>Usertype</label>
+                                                <input type="text" class="form-control" placeholder="Usertype" name="usertype" id="usertype">
+                                            </div> -->
 
 
                                             <!-- 
@@ -339,6 +394,55 @@ if ($_SESSION['usertype'] == 'admin') {
     <script>
         $(document).ready(function() {
 
+            // Dropdown Jquery
+            $('#company').change(function() {
+                var company_id = $(this).val();
+
+                $.ajax({
+                    method: 'POST',
+                    url: 'department_action.php',
+                    data: {
+                        company_id
+
+                    },
+                    success: function(data) {
+                        $('#department').html(data);
+                    }
+                });
+                $('#position').empty().append('<option selected> Please Choose an Position </option>')
+            });
+
+            $('#department').change(function() {
+                // alert("Hola");
+                var department_id = $(this).val();
+                console.log(department_id)
+                $.ajax({
+                    method: 'POST',
+                    url: 'position_action.php',
+                    data: {
+                        department_id
+                    },
+                    success: function(data) {
+                        $('#position').html(data);
+
+                    }
+                });
+
+            });
+
+            // $('#position').change()
+
+            // $('#position').empty().append('<option selected >Please choose an Position</option>')
+            // document.getElementById("adduser").reset();
+            // Swal.fire({
+            //     position: 'top-end',
+            //     icon: 'success',
+            //     title: 'Your work has been saved',
+            //     showConfirmButton: false,
+            //     timer: 3500
+            // })
+
+
             // $(document).on('submit', '#addprofile', function() {
             // 	alert('sds');
             // 	// var username = $('#username').val();
@@ -367,7 +471,7 @@ if ($_SESSION['usertype'] == 'admin') {
                 var company = $('#company').val();
                 var department = $('#department').val();
                 var position = $('#position').val();
-                var usertype = $('#usertype').val();
+                var access = $('#access').val();
 
 
 
@@ -379,9 +483,9 @@ if ($_SESSION['usertype'] == 'admin') {
 
 
 
-                console.log(first_name, middle_name, last_name, email, username, password, employee_id, company, department, position, usertype);
+                // console.log(access);
 
-                if (first_name && middle_name && last_name && email && username && password && employee_id && company && department && position && usertype) {
+                if (first_name && middle_name && last_name && email && username && password && employee_id && company && department && position && access) {
                     $.ajax({
                         method: 'POST',
                         url: 'code.php',
@@ -397,7 +501,7 @@ if ($_SESSION['usertype'] == 'admin') {
                             company: company,
                             department: department,
                             position: position,
-                            usertype: usertype
+                            access: access
 
 
 
@@ -410,6 +514,8 @@ if ($_SESSION['usertype'] == 'admin') {
                         }
                     });
 
+                    $('#position').empty().append('<option selected >Please choose an Position</option>')
+                    document.getElementById("adduser").reset();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -417,6 +523,14 @@ if ($_SESSION['usertype'] == 'admin') {
                         showConfirmButton: false,
                         timer: 3500
                     })
+
+                    // Swal.fire({
+                    //     position: 'top-end',
+                    //     icon: 'success',
+                    //     title: 'Your work has been saved',
+                    //     showConfirmButton: false,
+                    //     timer: 3500
+                    // })
                     // $('#adduser').modal('hide');
 
 
@@ -431,6 +545,10 @@ if ($_SESSION['usertype'] == 'admin') {
 
 
             });
+
+
+
+
 
         });
     </script>

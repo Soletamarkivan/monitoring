@@ -1,4 +1,5 @@
 <?php
+
 $notif = '';
 
 
@@ -11,17 +12,21 @@ if (isset($_POST['login_btn'])) {
 
     if ($username && $pass) {
 
-        $result = mysqli_query($db_connect, "SELECT * FROM data LEFT JOIN usertype_table on data.usertype   WHERE username='$username' AND password='$pass'");
+        $result = mysqli_query($db_connect, "SELECT * FROM data LEFT JOIN access on data.access_id = access.id  WHERE username='$username' AND password='$pass'");
 
 
         if ($row = mysqli_fetch_array($result)) {
 
-            $_SESSION['usertype'] = $row['usertype'];
+            $_SESSION['access_id'] = $row['access_id'];
             // $_SESSION['usertype'] = $row['access'];
 
-            if ($row['usertype'] == "admin") {
+            if ($row['access_id'] == "admin") {
                 header('location: admin_page.php');
-            } else if ($row['usertype'] == "supervisor") {
+            } else if ($row['access_id'] == "manager") {
+                header('location: supervisor_page.php');
+            } else if ($row['access_id'] == "it_support") {
+                header('location: supervisor_page.php');
+            } else if ($row['access_id'] == "user") {
                 header('location: supervisor_page.php');
             }
         } else {
