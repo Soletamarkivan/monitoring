@@ -48,56 +48,20 @@
 
 
 
+	// $('#example tbody').on('click', 'tr', function () {
+	// 	var data = table2.row(this).data();
+	// });
+	// jQuery('.dataTables_wrapper select').selectpicker();
 
 
 
 
 	// 
-	var table = $('#example3').DataTable({
 
+	// $('#example tbody').on('click', 'tr', function () {
+	// 	var data = table.row(this).data();
+	// });
 
-		"ajax": {
-			"url": "table_json.php",
-			"dataSrc": ""
-		},
-		"columns": [{
-
-			"data": "no"
-		},
-		{
-			"data": "username"
-		},
-		{
-			"data": "password"
-		},
-		{
-			"data": "access_name"
-		},
-		{
-			"data": "employee_id"
-		},
-		{
-			"data": "company_name"
-		},
-		{
-			"data": "department_name"
-		},
-		{
-			"data": "position"
-		},
-
-		],
-		language: {
-			paginate: {
-				next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-				previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
-			}
-		}
-	});
-	$('#example tbody').on('click', 'tr', function () {
-		var data = table.row(this).data();
-	});
-
-	jQuery('.dataTables_wrapper select').selectpicker();
+	// jQuery('.dataTables_wrapper select').selectpicker();
 
 })(jQuery);

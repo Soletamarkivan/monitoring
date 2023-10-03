@@ -1,7 +1,6 @@
 <?php
 include "db_connection.php";
 
-
 if ($_SESSION['access_id'] == '1') {
 } else {
     header('location: index.php');
@@ -121,36 +120,37 @@ if ($_SESSION['access_id'] == '1') {
 
                                             <div class="form-group col-md-6">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" name="first_name" id="first_name">
+                                                <input type="text" class="form-control" placeholder="Juan" name="first_name" id="first_name">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label>Middle Name</label>
-                                                <input type="text" class="form-control" name="middle_name" id="middle_name">
+                                                <input type="text" class="form-control" placeholder="Cruz" name="middle_name" id="middle_name">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label>Last Name</label>
-                                                <input type="text" class="form-control" name="last_name" id="last_name">
+                                                <input type="text" class="form-control" placeholder="Dela Cruz" name="last_name" id="last_name">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control" placeholder="Example@gmail.com" name="email" id="email">
+                                                <input type="email" class="form-control" placeholder="Juandelacruz@gmail.com" name="email" id="email">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" name="username" id="username">
+                                                <input type="text" class="form-control" placeholder="Juan-IT" name="username" id="username">
                                             </div>
+
                                             <div class="form-group col-md-6">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" name="password" id="password">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label>Employee ID</label>
-                                                <input type="text" class="form-control" name="employee_id" id="employee_id">
+                                                <input type="text" class="form-control" placeholder="043" name="employee_id" id="employee_id">
                                             </div>
 
                                             <div class="form-group col-md-6">
@@ -419,10 +419,6 @@ if ($_SESSION['access_id'] == '1') {
     <script src="js/plugins-init/datatables.init.js"></script>
 
 
-    <!-- Sweet Alert -->
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script>
         $(document).ready(function() {
 
@@ -441,7 +437,7 @@ if ($_SESSION['access_id'] == '1') {
                         $('#department').html(data);
                     }
                 });
-                $('#position').empty().append('<option selected> Choose Department </option>')
+                $('#position').empty().append('<option selected> Please Choose an Position </option>')
             });
 
             $('#department').change(function() {
@@ -540,21 +536,13 @@ if ($_SESSION['access_id'] == '1') {
 
                         },
                         success: function(data) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Your work has been saved',
-                                showConfirmButton: false,
-                                timer: 3500
-                            })
-
-                            // console.log(data)
+                            console.log(data)
                             // $('#adduser').modal('hide');
 
                         }
                     });
 
-                    $('#position').empty().append('<option selected >Please choose an Department</option>')
+                    $('#position').empty().append('<option selected >Please choose an Position</option>')
                     document.getElementById("adduser").reset();
                     Swal.fire({
                         position: 'top-end',

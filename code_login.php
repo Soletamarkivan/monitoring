@@ -12,7 +12,7 @@ if (isset($_POST['login_btn'])) {
 
     if ($username && $pass) {
 
-        $result = mysqli_query($db_connect, "SELECT * FROM data LEFT JOIN access on data.access_id = access.id  WHERE username='$username' AND password='$pass'");
+        $result = mysqli_query($db_connect, "SELECT * FROM data LEFT JOIN access on data.access_id = access.id WHERE username='$username' AND password='$pass'");
 
 
         if ($row = mysqli_fetch_array($result)) {
@@ -20,14 +20,14 @@ if (isset($_POST['login_btn'])) {
             $_SESSION['access_id'] = $row['access_id'];
             // $_SESSION['usertype'] = $row['access'];
 
-            if ($row['access_id'] == "admin") {
+            if ($row['access_id'] == "1") {
                 header('location: admin_page.php');
             } else if ($row['access_id'] == "manager") {
-                header('location: supervisor_page.php');
+                header('location: 2.php');
             } else if ($row['access_id'] == "it_support") {
-                header('location: supervisor_page.php');
+                header('location: 3.php');
             } else if ($row['access_id'] == "user") {
-                header('location: supervisor_page.php');
+                header('location: 4.php');
             }
         } else {
 

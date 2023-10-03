@@ -2,7 +2,7 @@
 session_start();
 
 
-if ($_SESSION['usertype'] == 'admin') {
+if ($_SESSION['access_id'] == '1') {
 } else {
 	header('location: index.php');
 }
@@ -11,6 +11,24 @@ if ($_SESSION['usertype'] == 'admin') {
 
 
 <head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Zenix - Crypto Admin Dashboard">
+	<meta property="og:title" content="Zenix - Crypto Admin Dashboard">
+	<meta property="og:description" content="Zenix - Crypto Admin Dashboard">
+	<meta property="og:image" content="https://zenix.dexignzone.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	<title>Monitoring</title>
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<!-- Datatable -->
+	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!-- Custom Stylesheet -->
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -40,9 +58,20 @@ if ($_SESSION['usertype'] == 'admin') {
 
 		<?php
 		include "includes/admin_header.php";
+
+		?>
+
+		<!--**********************************
+            Sidebar start
+        ***********************************-->
+
+		<?php
 		include "includes/admin_sidebar.php";
 		?>
 
+		<!--**********************************
+            Sidebar end
+        ***********************************-->
 
 
 
@@ -193,66 +222,21 @@ if ($_SESSION['usertype'] == 'admin') {
 				</div>
 				<!-- Tables -->
 
-
+				<!-- USER MANAGEMENT TABLE -->
 				<div class="container-fluid">
 
 					<div class="row">
 						<div class="col-12">
 							<div class="card ">
 								<div class="card-header ">
-									<h4 class="card-title">Profile Datatable</h4>
+									<h4 class="card-title">User Profile</h4>
 									<!-- ADD BUTTON  -->
-									<button onclick="location.href='add_user.php'">asd</button>
+									<!-- <button onclick="location.href='add_user.php'">asd</button> -->
 									<button type="button" class="btn btn-primary mb-2  text-right" onclick="location.href='add_user.php'"><i class="fa fa-plus" aria-hidden="true"></i></button>
 								</div>
-
-								<!-- START ADD MODAL HERE -->
-								<!-- Button trigger modal -->
-								<!-- Modal -->
-								<!-- <div class="modal fade" id="exampleModalCenter">
-									<div class="modal-dialog modal-dialog-centered" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title">Modal title</h5>
-												<button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-												</button>
-											</div>
-											<form id="addprofile">
-												<div class="modal-body text-left">
-
-													<input type="text" placeholder="USERNAME" class="username text-center" name="username" id="username">
-													<hr>
-
-													<input type="text" placeholder="PASSWORD" class="password text-center" name="password" id="password">
-													<hr>
-
-													<input type="text" placeholder="USERTYPE" class="text-center" name="usertype" id="usertype">
-													<hr>
-
-													<input type="text" placeholder="EQUIPMENTS" class="text-center" name="equipments" id="equipments">
-													<hr>
-
-													<input type="text" placeholder="TYPE OF EQUIPMENT" class="text-center" name="equipments_type" id="equipments_type">
-													<hr>
-
-													<input type="text" placeholder="STATUS" class="text-center" name="status" id="status">
-													<hr>
-
-
-												</div>
-												<div class="modal-footer">
-													<button type="submit" class="btn btn-danger light" data-dismiss="modal">Close</button>
-													<button type="submit" class="btn btn-primary" id="addprofile">Add Profile</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div> -->
-
-								<!-- END ADD MODAL HERE -->
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="example3" class="table primary-table-bg-hover" style="min-width: 845px">
+										<table id="example3" class="" style="min-width: 845px">
 											<thead>
 												<tr>
 													<th>NO.</th>
@@ -263,16 +247,9 @@ if ($_SESSION['usertype'] == 'admin') {
 													<th>COMPANY</th>
 													<th>DEPARTMENT</th>
 													<th>POSITION</th>
-
-													<!-- <th>ACTION</th> -->
-													<!-- <th>Education</th>
-							<th>Mobile</th>
-							<th>Email</th>
-							<th>Joining Date</th>
-							<th>Action</th> -->
 												</tr>
 											</thead>
-											<tbody class="bg-primary">
+											<tbody class="">
 
 											</tbody>
 										</table>
@@ -284,56 +261,24 @@ if ($_SESSION['usertype'] == 'admin') {
 
 					</div>
 				</div>
+				<!-- END OF USER MANAGEMENT TABLE -->
 
-				<!-- TABLE WITH DESIGN -->
-				<!-- 
-				<div class="container-fluid">
 
-					<div class="row">
 
-						<div class="col-12">
-							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">Primary Table Hover</h4>
-									<button type="button" class="btn btn-primary mb-2  text-right" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus" aria-hidden="true"></i></button>
-								</div> -->
+				<!-- COMPUTER MANAGEMENT TABLE -->
 
-				<!-- DISPLAY DATA -->
-				<!-- <div class="card-body">
-									<div class="table-responsive">
-										<table id="example" class="table primary-table-bg-hover">
-											<thead>
-												<tr>
-													<th scope="col">NO.</th>
-													<th scope="col">USERNAME</th>
-													<th scope="col">PASSWORD</th>
-													<th scope="col">USERTYPE</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<th>1</th>
-													<td>Mark</td>
-													<td>Otto</td>
-													<td>@mdo</td>
-												</tr>
-												<tr>
-													<th>2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
 
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
 
-					</div>
-				</div> -->
-				<!-- END OF THE WITH DESIGN -->
+
+				<!-- END OF COMPUTER MANAGEMENT TABLE -->
+
+
+
+
+
+
+
+
 
 				<!-- End of Tables -->
 
@@ -382,111 +327,84 @@ if ($_SESSION['usertype'] == 'admin') {
 	<!--**********************************
         Scripts
     ***********************************-->
+
 	<!-- Required vendors -->
-	<!-- <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+	<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-	<!-- Datatable -->
-	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="js/plugins-init/datatables.init.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+
+	<!-- Chart piety plugin files -->
+	<script src="vendor/peity/jquery.peity.min.js"></script>
+
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="js/dashboard/dashboard-1.js"></script>
+
+	<script src="vendor/owl-carousel/owl.carousel.js"></script>
 	<script src="js/custom.min.js"></script>
 	<script src="js/deznav-init.js"></script>
 	<script src="js/demo.js"></script>
 	<!-- <script src="js/styleSwitcher.js"></script> -->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-	<!-- JQUERY SCRIPT -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<!-- <script>
+	<!-- Datatable -->
+	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<!-- <script src="js/plugins-init/datatables.init.js"></script> -->
+
+
+	<script>
 		$(document).ready(function() {
-
-			// $(document).on('submit', '#addprofile', function() {
-			// 	alert('sds');
-			// 	// var username = $('#username').val();
-			// 	// var password = $('#password').val();
-			// 	// var usertype = $('#usertype').val();
-			// 	// var equipments = $('#equipments').val();
-			// 	// var equipments_type = $('#equipments_type').val();
-			// 	// var status = $('#status').val();
-
-			// 	console.log(username);
-
-			// })
-
-			// alert("Hola"); 
-			$('#addprofile').on('submit', function(e) {
-				e.preventDefault()
-
-				// alert("Hola");
-				var username = $('#username').val();
-				var password = $('#password').val();
-				var usertype = $('#usertype').val();
-				var equipments = $('#equipments').val();
-				var equipments_type = $('#equipments_type').val();
-				var status = $('#status').val();
-				// var usertype = $('#').val();
+			var table = $('#example3').DataTable({
 
 
+				"ajax": {
+					"url": "table_json.php",
+					"dataSrc": ""
+				},
+				"columns": [{
 
+						"data": "no"
+					},
+					{
+						"data": "username"
+					},
+					{
+						"data": "password"
+					},
+					{
+						"data": "access_name"
+					},
+					{
+						"data": "employee_id"
+					},
+					{
+						"data": "company_name"
+					},
+					{
+						"data": "department_name"
+					},
+					{
+						"data": "position"
+					},
 
-				console.log(username, password, usertype, equipments, equipments_type, status);
-
-				if (username && password && usertype && equipments && equipments_type && status) {
-					$.ajax({
-						method: 'POST',
-						url: 'code.php',
-						data: {
-
-							username: username,
-							password: password,
-							usertype: usertype,
-							equipments: equipments,
-							equipments_type: equipments_type,
-							status: status
-
-						},
-						success: function(data) {
-							console.log(data)
-							$('#addprofile').modal('hide');
-
-						}
-					});
-
-					Swal.fire({
-						position: 'top-end',
-						icon: 'success',
-						title: 'Your work has been saved',
-						showConfirmButton: false,
-						timer: 3500
-					})
-					$('#addprofile').modal('hide');
-
-
-				} else {
-					Swal.fire({
-						icon: 'error',
-						title: 'Note',
-						text: 'All fields are required',
-						// footer: '<a href="">Why do I have this issue?</a>'
-					})
+				],
+				language: {
+					paginate: {
+						next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+						previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
+					}
 				}
-
-
 			});
-
-		});
-	</script> -->
-
+		})
+	</script>
 
 
 
 
-	<?php
 
-
-
-	?>
 
 </body>
 
