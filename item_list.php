@@ -109,6 +109,9 @@ if ($_SESSION['access_id'] == '1') {
                                                     <th>QUANTITY</th>
                                                     <th>UNIT</th>
                                                     <th>ITEM DESCRIPTION</th>
+                                                    <th>AVAILABILITY</th>
+                                                    <th>ACTION</th>
+
 
                                                 </tr>
                                             </thead>

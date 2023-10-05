@@ -30,6 +30,12 @@ if ($_SESSION['access_id'] == '1') {
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- AUTO COMPLETE -->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+
+
+
+
 </head>
 
 <body>
@@ -69,87 +75,87 @@ if ($_SESSION['access_id'] == '1') {
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- <div class="form-head" style="background-image:url('images/background/bg3.jpg');background-position: bottom; ">
-				<div class="container max d-flex align-items-center mt-0">
-					<h2 class="font-w600 title text-white mb-2 mr-auto ">Dashboard</h2>
-					<div class="weather-btn mb-2">
-						<span class="mr-3 font-w600 text-black"><i class="fa fa-cloud mr-2"></i>21</span>
-						<select class="form-control style-1 default-select  mr-3 ">
-							<option>Medan, IDN</option>
-							<option>Jakarta, IDN</option>
-							<option>Surabaya, IDN</option>
-						</select>
-					</div>
-					<a href="javascript:void(0);" class="btn white-transparent mb-2"><i class="las la-calendar scale5 mr-3"></i>Filter Periode</a>
-				</div>
-			</div> -->
+
             <div class="container-fluid">
-                <!-- <div class="form-head  d-flex flex-wrap align-items-center">
-                    <h2 class="font-w600 title mb-2 mr-auto ">ADD ITEM</h2>
 
-                    <a href="javascript:void(0);" class="btn btn-secondary mb-2"><i class="las la-calendar scale5 mr-3"></i>Filter Periode</a>
-                </div> -->
-                <!-- <div class="row ">
-					<button type="button" class="btn btn-secondary p-5 w-25 mx-auto">
-						<h1>Users</h1>
-					</button>
-					<button type="button" class="btn btn-secondary p-5 w-25 mx-auto">
-						<h1>Equipments</h1>
-					</button>
 
-				</div> -->
-
-                <!-- Total of Borrowed -->
 
                 <!-- Tables -->
 
 
-                <div class="container-fluid">
-
-                    <div class="row border">
-                        <div class="card mx-auto">
-                            <div class="mx-auto p-4">
-                                <h4 class="card-title ">ADD ITEM</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-
-                                    <form id="add_item">
-
-                                        <div class="form-row">
-
-                                            <div class="form-group col-lg-6">
-                                                <label>Item Code</label>
-                                                <input type="text" class="form-control" placeholder="TL-000" name="item_code" id="item_code">
-                                            </div>
-
-                                            <div class="form-group col-lg-6">
-                                                <label>Quantity</label>
-                                                <input type="number" class="form-control" placeholder="0" name="quantity" id="quantity">
-                                            </div>
-
-                                            <div class="form-group col-lg-12">
-                                                <label>Unit</label>
-                                                <input type="text" class="form-control" placeholder="Please input what kind of unit" name="unit" id="unit">
-                                            </div>
 
 
-                                            <div class="form-group col-lg-12">
-                                                <label>Description Item</label>
-                                                <input type="text" class="form-control" placeholder="Please input the description of item" name="item_desc" id="item_desc">
-                                            </div>
+                <div class="row border">
+                    <div class="card mx-auto">
+                        <div class="mx-auto p-4">
+                            <h4 class="card-title ">ADD ITEM</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
+
+                                <form id="add_item">
+
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-6" style="font-weight:bolder ">
+                                            <label>Company</label>
+
+                                            <select name="company" class="form-control " id="company">
+                                                <option value="" id="company" selected disabled>Choose Company</option>
+
+                                                <?php
+
+
+                                                $result = mysqli_query($db_connect, "SELECT * FROM company");
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                ?>
+                                                    <option value="<?php echo $row['id']; ?>">
+                                                        <?php echo $row["company_name"]; ?></option>
+                                                <?php
+                                                }
+
+                                                ?>
+
+                                            </select>
+
                                         </div>
 
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-primary">ADD</button>
+                                        <div class="form-group col-lg-6">
+                                            <label>Item Code</label>
+                                            <input type="text" class="form-control" placeholder="TL-000" name="item_code" id="item_code">
                                         </div>
-                                    </form>
-                                </div>
+
+                                        <div class="form-group col-lg-6">
+                                            <label>Quantity</label>
+                                            <input type="text" class="form-control" placeholder="0" name="quantity" id="quantity">
+                                        </div>
+
+
+
+                                        <div class="form-group col-lg-6">
+                                            <label>Unit</label>
+                                            <input type="text" class="form-control" placeholder="Please input what kind of unit" name="unit" id="unit">
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group col-lg-12">
+                                            <label>Description Item</label>
+                                            <input type="text" class="form-control" placeholder="Please input the description of item" name="item_desc" id="item_desc">
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary">ADD</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+
 
 
                 <!-- End of Tables -->
@@ -192,6 +198,7 @@ if ($_SESSION['access_id'] == '1') {
 
 
     </div>
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -226,8 +233,46 @@ if ($_SESSION['access_id'] == '1') {
     <script src="js/plugins-init/datatables.init.js"></script>
 
 
+    <!-- AUTO COMPLETE -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+
+
     <script>
         $(document).ready(function() {
+
+
+            $("#unit").autocomplete({
+                source: 'unit_auto_complete.php'
+            });
+
+            $("#item_code").autocomplete({
+                source: 'item_code_auto_complete.php'
+            });
+
+
+
+            // $('#company').change(function() {
+            //     var company_id = $(this).val();
+
+            //     $.ajax({
+            //         method: 'POST',
+            //         url: 'item_code_auto_complete.php',
+            //         data: {
+            //             company_id
+
+            //         },
+            //         success: function(data) {
+            //             $('#item_code').autocomplete(data);
+            //             // console.log(data)
+            //         }
+            //     });
+            //     // $('#position').empty().append('<option selected> Choose Department </option>')
+            // });
+
+
+
 
 
 
@@ -284,7 +329,7 @@ if ($_SESSION['access_id'] == '1') {
                     // $('#adduser').modal('hide');
 
 
-                
+
 
 
 

@@ -2,6 +2,16 @@
             Sidebar start
         ***********************************-->
 
+<?php
+include "db_connection.php";
+
+
+if ($_SESSION['access_id'] == '1') {
+} else {
+    header('location: index.php');
+}
+?>
+
 
 
 <div class="deznav">
@@ -33,11 +43,68 @@
                     <span class="nav-text">TEIS</span>
                 </a>
             </li>
-            <li><a href="add_item.php" class="ai-icon" aria-expanded="false">
+
+
+            <!-- <li><a href="add_item.php" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-settings-2"></i>
                     <span class="nav-text">ADD ITEM</span>
                 </a>
+            </li> -->
+
+
+
+
+
+
+
+
+
+
+
+
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-061-puzzle"></i>
+
+                    <span class="nav-text">ADD ITEM</span>
+                </a>
+                <ul aria-expanded="false">
+                    <?php
+                    $res = mysqli_query($db_connect, "SELECT * FROM company");
+                    while ($row = mysqli_fetch_array($res)) {
+
+
+                    ?><li><a href="mbi_add_item.php?id=<?= $row['id'] ?>">
+                                <?php echo $row['company_name']; ?>
+                            </a></li>
+                    <?php
+                    }
+                    ?>
+
+
+
+                </ul>
             </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-061-puzzle"></i>
@@ -45,7 +112,7 @@
                     <span class="nav-text">SETTINGS</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="uom.php">UOM</a></li>
+                    <!-- <li><a href="uom.php">UOM</a></li> -->
                     <li><a href="add_user.php">USER MANAGEMENT</a></li>
                     <!-- <li><a href="post-details.html">MSC</a></li>
                     <li><a href="post-details.html">EF</a></li> -->

@@ -462,37 +462,11 @@ if ($_SESSION['access_id'] == '1') {
 
             });
 
-            // $('#position').change()
-
-            // $('#position').empty().append('<option selected >Please choose an Position</option>')
-            // document.getElementById("adduser").reset();
-            // Swal.fire({
-            //     position: 'top-end',
-            //     icon: 'success',
-            //     title: 'Your work has been saved',
-            //     showConfirmButton: false,
-            //     timer: 3500
-            // })
-
-
-            // $(document).on('submit', '#addprofile', function() {
-            // 	alert('sds');
-            // 	// var username = $('#username').val();
-            // 	// var password = $('#password').val();
-            // 	// var usertype = $('#usertype').val();
-            // 	// var equipments = $('#equipments').val();
-            // 	// var equipments_type = $('#equipments_type').val();
-            // 	// var status = $('#status').val();
-
-            // 	console.log(username);
-
-            // })
-
             // alert("Hola"); 
             $('#adduser').on('submit', function(e) {
                 e.preventDefault()
 
-                // alert("Hola");
+                alert("Hola");
                 var first_name = $('#first_name').val();
                 var middle_name = $('#middle_name').val();
                 var last_name = $('#last_name').val();
